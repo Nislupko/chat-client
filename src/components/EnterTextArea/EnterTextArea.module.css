@@ -1,0 +1,32 @@
+.textArea{
+    display: flex;
+    max-width:90%;
+    min-width: 90%;
+    background-color: lightgoldenrodyellow;
+    border-radius: 8px;
+    min-height: 7vh;
+    max-height: 7vh;
+    margin: 0 4px;
+    overflow-y: auto
+}
+
+.Button{
+    max-width:10%;
+    min-width: 10%;
+}
+
+.EnterTextArea{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 0 4px 0 4px;
+}
+
+.Border{
+    width: 100%;
+    height: 100%;
+    margin: 0 4px 0 4px;
+    padding: 8px 8px 8px 8px;
+    border-radius: 10px;
+    border: 1px solid gray;
+}

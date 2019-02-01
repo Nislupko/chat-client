@@ -1,0 +1,8 @@
+.CurrentUserArea {
+    background-color: lightgreen;
+    padding: 4px 4px 4px 12px;
+    margin-left: 4px;
+    border-radius: 12px;
+    width:100%;
+    overflow-y: scroll;
+}

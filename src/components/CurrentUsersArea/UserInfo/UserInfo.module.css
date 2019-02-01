@@ -1,0 +1,9 @@
+.UserInfo{
+    width:100%;
+}
+
+.Name {
+    align: left;
+    color: red;
+    font-size: large;
+}

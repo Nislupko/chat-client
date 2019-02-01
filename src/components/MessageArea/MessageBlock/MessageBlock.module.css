@@ -1,0 +1,27 @@
+.MessageBlock {
+    width: 100%;
+    background-color: lightblue;
+    display:flex;
+    flex-direction: row;
+    margin: 4px 4px 4px 0;
+    border-radius: 8px
+    
+}
+
+.MessageInfo{
+    min-width:120px;
+    line-height: 0px;
+    margin-left: 8px;
+}
+.Text{
+
+}
+
+.Time{
+    font-size: small;
+    font-style: italic;
+}
+
+.Name{
+    font-weight: bold;
+}
