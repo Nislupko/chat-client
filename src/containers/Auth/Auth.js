@@ -33,8 +33,11 @@ export default class Auth extends Component {
                       Click
                   </button>
               </div>
+              <div>
+                  {this.props.errorMessage}
+              </div>
           </div>
-            </div>
+        </div>
     )
   }
 }

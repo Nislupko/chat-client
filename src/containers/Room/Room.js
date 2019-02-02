@@ -5,16 +5,6 @@ import MessageArea from "../../components/MessageArea/MessageArea";
 import CurrentUsersArea from "../../components/CurrentUsersArea/CurrentUsersArea";
 
 class Room extends Component {
-    constructor(props){
-        super(props)
-        this.state={
-            roomID: this.props.match.params.id,
-            currentUser:this.props.params.currentUser,
-            currentConnection: this.createNewConnection(),
-            users:[],
-            messages:[]
-        }
-    }
 
     async createNewConnection() {
         //Создаем новое сокет-подключение
@@ -67,38 +57,30 @@ class Room extends Component {
         )
     }
 
-    //Если было отправлено непустое сообщение - отправляем его на сервер
-    onMessageSendHandler = (elem) => {
-        if(elem.replace(/\s*/gi,'')){
-            const msg = {
-                type: 'NewMessage',
-                user: this.state.currentUser,
-                content: elem,
-                room: this.state.roomID
-            }
-            this.state.currentConnection.send(JSON.stringify(msg))
-        }
+    //Уведомляем о входе и получаем информацию о комнате
+    componentWillMount() {
+        console.log(this.props)
+        this.props.onEntryHandler(this.props.match.params.id)
     }
-    //При выходе из комнаты закрываем соединение
     componentWillUnmount() {
-        this.state.currentConnection.close()
+        this.props.onExitHandler()
     }
 
     render() {
         return (
             <div>
-                <h2>Welcome to the chat-room #{this.state.roomID}, {this.state.currentUser}</h2>
+                <h2>Welcome to the chat-room #{this.props.params.currentRoom}, {this.props.params.currentUser}</h2>
                 <div className={styles.Content}>
                     <div className={styles.UpperBlock}>
                         <div id='auto-scroll-bottom' className={styles.UpperBlockLeft}>
-                            <MessageArea messages={this.state.messages}/>
+                            <MessageArea messages={this.props.params.messages}/>
                         </div>
                         <div className={styles.UpperBlockRight}>
-                            <CurrentUsersArea users={this.state.users}/>
+                            <CurrentUsersArea users={this.props.params.users}/>
                         </div>
                     </div>
                     <div className={styles.DownBlock}>
-                        <EnterTextArea handler={this.onMessageSendHandler}/>
+                        <EnterTextArea onMessageHandler={this.props.onMessageHandler}/>
                     </div>
                 </div>
             </div>

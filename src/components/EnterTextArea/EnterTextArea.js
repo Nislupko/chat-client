@@ -13,12 +13,15 @@ class EnterTextArea extends Component {
            textArea:e.target.value
        })
     }
+    //Отправляем непустые сообщения
     onClickHandler = (e) => {
         e.preventDefault()
-        this.props.handler(this.state.textArea)
-        this.setState({
-            textArea:''
-        })
+        if(this.state.textArea.replace(/\s*/gi,'')) {
+            this.props.onMessageHandler(this.state.textArea)
+            this.setState({
+                textArea: ''
+            })
+        }
     }
     render() {
         return (
