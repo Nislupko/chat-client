@@ -17,7 +17,7 @@ class App extends Component {
             users:[],
             rooms:[],
             messages:[],
-            errorMessage:
+            errorMessage:''
         }
     }
 
