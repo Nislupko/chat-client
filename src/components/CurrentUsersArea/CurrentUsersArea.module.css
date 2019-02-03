@@ -1,8 +1,12 @@
 .CurrentUserArea {
-    background-color: lightgreen;
+    min-height:72vh;
+    max-height: 72vh;
     padding: 4px 4px 4px 12px;
     margin-left: 4px;
     border-radius: 12px;
     width:100%;
     overflow-y: scroll;
 }
+
+.CurrentUserArea::-webkit-scrollbar { width: 0; }
+.CurrentUserArea { -ms-overflow-style: none; }

@@ -2,10 +2,25 @@
     dispaly:flex;
     flex-direction: column;
     width:100%;
-    background: linear-gradient(270deg, #cef2fa 0%, #59bfef 100%);
 }
 
 .Room {
     display:flex;
     margin:8px;
+}
+
+
+.RoomList{
+    padding: 4px 12px 4px 12px;
+    width:100%;
+    min-height: 80vh;
+    max-height: 80vh;
+    overflow-y: scroll;
+}
+.RoomList::-webkit-scrollbar { width: 0; }
+.RoomList { -ms-overflow-style: none; }
+
+
+.extraMargin{
+    margin-top: 60px;
 }

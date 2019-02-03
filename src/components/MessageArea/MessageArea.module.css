@@ -1,5 +1,9 @@
 .MessageArea{
     padding: 4px 12px 4px 12px;
     width:100%;
+    min-height: 72vh;
+    max-height: 72vh;
     overflow-y: scroll;
 }
+.MessageArea::-webkit-scrollbar { width: 0; }
+.MessageArea { -ms-overflow-style: none; }
