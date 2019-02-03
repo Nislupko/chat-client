@@ -11,13 +11,19 @@ class Lobby extends Component {
             <div className={styles.Lobby}>
               <h1>Live rooms</h1>
               <div className={styles.RoomList}>
-                {this.props.rooms.map((room, index) => (
-                  <NavLink to={'/rooms/' + room.id}>
-                    <div className="list-group-item m-1 " key={index}>
-                      {`Room ${room.id}`}
-                    </div>
-                  </NavLink>
-                ))}
+                {this.props.rooms ? (
+                  this.props.rooms.map((room, index) => (
+                    <NavLink key={index} to={'/rooms/' + room.id}>
+                      <div className="list-group-item m-1 ">
+                        {`Room ${room.id}`}
+                      </div>
+                    </NavLink>
+                  ))
+                ) : (
+                  <div className={styles.RoomList}>
+                    Connection Error. Try later
+                  </div>
+                )}
               </div>
             </div>
           </div>
