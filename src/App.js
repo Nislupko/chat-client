@@ -33,26 +33,22 @@ class App extends Component {
     });
     socket.on('new_message', function(data) {
       const response = JSON.parse(data);
-      console.log(response);
       context.setState({
         messages: response.messages
       });
     });
     socket.on('new_entry', function(data) {
       const response = JSON.parse(data);
-      console.log(response);
       context.setState({
         users: response.users
       });
     });
     socket.on('bad_name', function(data) {
-      console.log('bad_name');
       context.setState({
         errorMessage: `${data} is already in use. Try another name`
       });
     });
     socket.on('good_name', function(data) {
-      console.log('good_name');
       context.setState({
         errorMessage: ``,
         currentUser: data

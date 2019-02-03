@@ -7,7 +7,6 @@ import CurrentUsersArea from '../../components/CurrentUsersArea/CurrentUsersArea
 class Room extends Component {
   //Уведомляем о входе и получаем информацию о комнате
   componentWillMount() {
-    console.log(this.props);
     this.props.onEntryHandler(this.props.match.params.id);
   }
   componentWillUnmount() {
