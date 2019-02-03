@@ -29,7 +29,7 @@ class Room extends Component {
             <div className="col-9">
               <MessageArea messages={this.props.params.messages} />
             </div>
-            <div className="col-2">
+            <div className="col-3">
               <CurrentUsersArea users={this.props.params.users} />
             </div>
           </div>

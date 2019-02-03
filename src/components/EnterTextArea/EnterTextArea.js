@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import styles from './EnterTextArea.module.css';
 
 class EnterTextArea extends Component {
   constructor(props) {
@@ -25,25 +26,24 @@ class EnterTextArea extends Component {
   render() {
     return (
       <div className="container-fluid">
-        <div className="input-group mb-3">
-          <textarea
-            type="text"
-            className="form-control"
-            placeholder="Start typing..."
-            aria-label="Recipient's username"
-            aria-describedby="button-addon2"
-            value={this.state.textArea}
-            onChange={e => this.updateTextArea(e)}
-          />
-          <div className="input-group-append">
-            <button
-              className="btn btn-outline-secondary"
-              type="button"
-              id="button-addon2"
-              onClick={this.onClickHandler}
-            >
-              Send!
-            </button>
+        <div className={styles.noResize}>
+          <div className="input-group mb-3">
+            <textarea
+              type="text"
+              className="form-control"
+              placeholder="Start typing..."
+              value={this.state.textArea}
+              onChange={e => this.updateTextArea(e)}
+            />
+            <div className="input-group-append">
+              <button
+                className="btn btn-outline-secondary"
+                type="button"
+                onClick={this.onClickHandler}
+              >
+                Send!
+              </button>
+            </div>
           </div>
         </div>
       </div>

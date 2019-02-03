@@ -1,9 +1,4 @@
-.textArea{
-    display: flex;
-    width:100%;
-    background-color: lightgoldenrodyellow;
-    border-radius: 8px;
-    height: 10vh;
+.noResize{
     resize: none;
 }
 textarea::-webkit-scrollbar { width: 0; }
@@ -17,6 +12,6 @@ textarea { -ms-overflow-style: none; }
 }
 
 textarea{
-    max-height: 8vh;
-    min-height: 8vh;
+
+    resize:none;
 }
